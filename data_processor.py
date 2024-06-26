@@ -1,8 +1,12 @@
-# Definuje prefix pro cestu ke slozce s daty pro import
-IMPORT_CESTA_PROJEKTU = './files/import/'
+import os
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Definuje prefix pro cestu ke slozce s daty pro import
-EXPORT_CESTA_PROJEKTU = './files/export/'
+IMPORT_CESTA_PROJEKTU = os.path.join(SCRIPT_DIR, './files/import/')
+
+# Definuje prefix pro cestu ke slozce s daty pro import
+EXPORT_CESTA_PROJEKTU = os.path.join(SCRIPT_DIR, './files/export/')
 
 # Definuje název souboru dat pro export
 NAZEC_SOUBORU_EXPORT = 'export'
@@ -42,7 +46,6 @@ file_path_startovne_excel = EXPORT_CESTA_PROJEKTU + NAZEV_SOUBORU_STARTOVNE + '.
 
 import pandas as pd
 import numpy as np
-import os
 
 # Načte soubor excelu
 df = pd.read_excel(file_path_data)
